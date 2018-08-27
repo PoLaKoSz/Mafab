@@ -2,7 +2,7 @@
 
 namespace PoLaKoSz\Mafab\Models;
 
-class MafabMovie
+class MafabMovie implements \JsonSerializable
 {
     /**
      * There is no difference currently between a standalon movie
@@ -53,5 +53,17 @@ class MafabMovie
 
     public function getThumbnailImage() : string {
         return $this->thumbnailImage;
+    }
+
+
+    public function jsonSerialize() {
+        return [
+            'id'              => $this->getID(),
+            'url'             => $this->getURL(),
+            'hungarian_title' => $this->getHungarianTitle(),
+            'original_title'  => $this->getOriginalTitle(),
+            'year'            => $this->getYear(),
+            'thumbnail_image' => $this->getThumbnailImage(),
+        ];
     }
 }

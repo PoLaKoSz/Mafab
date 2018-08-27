@@ -6,7 +6,7 @@ Mafab.hu is the hungarian IMDb according to [this article](http://www.vox.hu/new
 
 Via Composer
 
-`$ composer require polakosz/mafab master`
+`$ composer require polakosz/mafab`
 
 
 ## Usage

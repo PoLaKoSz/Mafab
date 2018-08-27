@@ -31,7 +31,7 @@ class MafabMovie implements \JsonSerializable
 
 
 
-    public function getID() : int {
+    public function getID() : string {
         return $this->id;
     }
 

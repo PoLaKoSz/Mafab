@@ -46,8 +46,8 @@ class MafabMovie implements \JsonSerializable
     public function getOriginalTitle() : string {
         return $this->originalTitle;
     }
-
-    public function getYear() : string {
+    
+    public function getYear() : int {
         return $this->year;
     }
 

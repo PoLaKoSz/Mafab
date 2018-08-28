@@ -10,7 +10,7 @@ class WebClient implements IWebClient
 
     public function __construct() {
         $this->headers = array(
-            'User-Agent:       https://github.com/PoLaKoSz/MafabAPI/',
+            'User-Agent:       https://github.com/PoLaKoSz/Mafab/',
             'Accept:           application/json',
             //'Accept-Language:  en,en-US;q=0.5',
             'X-Requested-With: XMLHttpRequest',

@@ -20,3 +20,15 @@ $results = $mafab->search( 'Avatar' );
 
 echo $results;
 ````
+
+# Tests
+
+## on Windows
+
+Navigate to the root folder with the terminal and run
+
+`.\\vendor\\bin\\phpunit --bootstrap .\\vendor\\autoload.php --testdox .\\tests`
+
+or
+
+`.\\vendor\\bin\\phpunit --bootstrap .\\vendor\\autoload.php .\\tests\\Deserializers\\SearchDeserializerTest`

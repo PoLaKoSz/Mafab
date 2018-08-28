@@ -20,7 +20,7 @@ class MafabMovie implements \JsonSerializable
 
 
 
-    public function __construct($id, $url, $hungarianTitle, $originalTitle, $year, $thumbnailImage) {
+    public function __construct( string $id, string $url, string $hungarianTitle, string $originalTitle, int $year, string $thumbnailImage) {
         $this->id = $id;
         $this->url = $url;
         $this->hungarianTitle = $hungarianTitle;
@@ -46,9 +46,19 @@ class MafabMovie implements \JsonSerializable
     public function getOriginalTitle() : string {
         return $this->originalTitle;
     }
-    
+
+    /**
+     * @return int -1 when no year found
+     */
     public function getYear() : int {
         return $this->year;
+    }
+
+    /**
+     * Check for a valid Year property
+     */
+    public function hasYear() : bool {
+        return $this->getYear() != -1;
     }
 
     public function getThumbnailImage() : string {

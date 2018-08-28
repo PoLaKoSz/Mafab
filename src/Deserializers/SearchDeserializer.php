@@ -10,6 +10,7 @@ class SearchDeserializer
     private const BASEURL = 'https://mafab.hu';
 
 
+
     /**
      * Convert the raw HTML string into object(s)
      * 
@@ -50,7 +51,14 @@ class SearchDeserializer
     }
 
     private static function getYear(string $input) : int {
-        return static::getFirstBracketsText( $input, '/html/body/a/small/small');
+        try
+        {
+            return (int) static::getFirstBracketsText( $input, '/html/body/a/small/small');
+        }
+        catch (\Exception $ex)
+        {
+            return -1;
+        }
     }
 
     private static function getFirstBracketsText(string $input, string $xPath) : string {

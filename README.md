@@ -1,5 +1,7 @@
 # Mafab.hu
 
+[![Build Status](https://travis-ci.com/PoLaKoSz/Mafab.svg?branch=master)](https://travis-ci.com/PoLaKoSz/Mafab)
+
 Mafab.hu is the hungarian IMDb according to [this article](http://www.vox.hu/newvox/?p=12222). This PHP library helps to search for movies on it.
 
 ## Install

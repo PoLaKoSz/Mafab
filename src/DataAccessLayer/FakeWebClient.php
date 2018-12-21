@@ -8,13 +8,15 @@ class FakeWebClient implements IWebClient
 
 
 
-    public function __construct(string $jSon) {
+    public function __construct(string $jSon)
+    {
         $this->jSon = $jSon;
     }
 
 
 
-    public function getSourceCode(string $url) : string {
+    public function getSourceCode(string $url) : string
+    {
         return $this->jSon;
     }
 }

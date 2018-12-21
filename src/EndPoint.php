@@ -12,7 +12,8 @@ abstract class Endpoint
 
 
 
-    public function __construct(IWebClient $webClient, string $endpointAddress) {
+    public function __construct(IWebClient $webClient, string $endpointAddress)
+    {
         $this->webClient = $webClient;
 
         $this->url = 'https://www.mafab.hu/' . $endpointAddress;
@@ -23,11 +24,13 @@ abstract class Endpoint
     /**
      * Change the endpoint WebClient
      */
-    public function setWebClient(IWebClient $webClient) : void {
+    public function setWebClient(IWebClient $webClient) : void
+    {
         $this->webClient = $webClient;
     }
     
-    protected function callAPI(string $query) : string {
-        return $this->webClient->getSourceCode( $this->url . $query );
+    protected function callAPI(string $query) : string
+    {
+        return $this->webClient->getSourceCode($this->url . $query);
     }
 }

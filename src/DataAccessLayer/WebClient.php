@@ -8,7 +8,8 @@ class WebClient implements IWebClient
 
 
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->headers = array(
             'User-Agent:       https://github.com/PoLaKoSz/Mafab/',
             'Accept:           application/json',
@@ -22,7 +23,8 @@ class WebClient implements IWebClient
     /**
      * https://stackoverflow.com/a/2107792/7306734
      */
-    public function getSourceCode(string $url) : string {
+    public function getSourceCode(string $url) : string
+    {
         $opts = [
             "http" => [
                 "method" => "GET",
@@ -32,6 +34,6 @@ class WebClient implements IWebClient
         
         $context = stream_context_create($opts);
 
-        return file_get_contents( $url, false, $context );
+        return file_get_contents($url, false, $context);
     }
 }

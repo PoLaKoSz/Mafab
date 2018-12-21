@@ -7,7 +7,8 @@ use PoLaKoSz\Mafab\Deserializers\SearchDeserializer;
 
 class Search extends Endpoint
 {
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct(new WebClient(), 'js/autocomplete.php?');
     }
 
@@ -15,14 +16,15 @@ class Search extends Endpoint
 
     /**
      * Search for Movie(s)
-     * 
+     *
      * @return  Array   of MafabMovie
      */
-    public function search(string $searchTerm) : array {
-        $searchTerm = urlencode( $searchTerm );
+    public function search(string $searchTerm) : array
+    {
+        $searchTerm = urlencode($searchTerm);
 
-        $apiResults = parent::callAPI('term=' . $searchTerm );
+        $apiResults = parent::callAPI('term=' . $searchTerm);
 
-        return SearchDeserializer::convert( $apiResults );
+        return SearchDeserializer::convert($apiResults);
     }
 }

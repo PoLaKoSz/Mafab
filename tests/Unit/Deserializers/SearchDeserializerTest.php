@@ -1,6 +1,6 @@
 <?php
 
-namespace PoLaKoSz\Mafab\Tests\Deserializers;
+namespace PoLaKoSz\Mafab\Tests\Unit\Deserializers;
 
 use PHPUnit\Framework\TestCase;
 use PoLaKoSz\Mafab\Deserializers\SearchDeserializer;

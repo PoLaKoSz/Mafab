@@ -30,6 +30,9 @@
         }
     },
     "scripts": {
+        "run-all-tests": ".\\vendor\\bin\\phpunit --bootstrap .\\vendor\\autoload.php --testdox .\\tests\\",
+        "run-u-tests": ".\\vendor\\bin\\phpunit --bootstrap .\\vendor\\autoload.php --testdox .\\tests\\Unit",
+        "run-r-tests": ".\\vendor\\bin\\phpunit --bootstrap .\\vendor\\autoload.php --testdox .\\tests\\Regression",
         "psr-check": ".\\vendor\\bin\\phpcs --ignore=vendor\\* --extensions=php .\\ --standard=PSR2"
     }
 }

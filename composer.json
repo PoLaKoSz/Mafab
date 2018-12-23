@@ -29,6 +29,11 @@
             "PoLaKoSz\\Mafab\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "PoLaKoSz\\Mafab\\Tests\\": "tests/"
+        }
+    },
     "scripts": {
         "run-all-tests": ".\\vendor\\bin\\phpunit --bootstrap .\\vendor\\autoload.php --testdox .\\tests\\",
         "run-u-tests": ".\\vendor\\bin\\phpunit --bootstrap .\\vendor\\autoload.php --testdox .\\tests\\Unit",

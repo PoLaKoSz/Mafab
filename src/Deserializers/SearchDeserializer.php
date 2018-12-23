@@ -57,6 +57,8 @@ class SearchDeserializer
     {
         try {
             return (int) static::getFirstBracketsText($input, '/html/body/a/small/small');
+        } catch (\Throwable $ex) {
+            return -1;
         } catch (\Exception $ex) {
             return -1;
         }
@@ -74,7 +76,11 @@ class SearchDeserializer
         $nodeInnerText = utf8_decode($node->textContent);
 
         preg_match('/\((([^()]*|(?R))*)\)/', $nodeInnerText, $output);
-
+        
+        if (!isset($output[1])) {
+            return null;
+        }
+        
         return $output[1];
     }
 

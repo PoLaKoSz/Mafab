@@ -4,6 +4,7 @@ namespace PoLaKoSz\Mafab;
 
 use PoLaKoSz\Mafab\DataAccessLayer\WebClient;
 use PoLaKoSz\Mafab\Deserializers\SearchDeserializer;
+use PoLaKoSz\Mafab\EndPoint;
 
 class Search extends Endpoint
 {

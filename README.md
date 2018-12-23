@@ -23,14 +23,8 @@ $results = $mafab->search( 'Avatar' );
 echo $results;
 ````
 
-# Tests
+## Tests
 
-## on Windows
-
-Navigate to the root folder with the terminal and run
-
-`.\\vendor\\bin\\phpunit --bootstrap .\\vendor\\autoload.php --testdox .\\tests`
-
-or
-
-`.\\vendor\\bin\\phpunit --bootstrap .\\vendor\\autoload.php .\\tests\\Deserializers\\SearchDeserializerTest`
+- `$ composer run-all-tests`: runs both unit and regression tests
+- `$ composer run-u-tests`: runs only the unit tests
+- `$ composer run-r-tests`: runs only the regression tests (to detect HTML DOM changes in the endpoints - calls Mafab.hu and after try the response)

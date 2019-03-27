@@ -8,7 +8,7 @@ use PoLaKoSz\Mafab\Tests\Unit\Deserializers\SearchDeserializerBase;
 
 class FullDetailsTest extends SearchDeserializerBase
 {
-    public function __construct()
+    public static function setUpBeforeClass()
     {
         $json = json_encode([
             0 => [
@@ -29,6 +29,6 @@ class FullDetailsTest extends SearchDeserializerBase
         $thumbnailImage = 'https://mafab.hu/static/thumb/w60/2018/92/02/291177_1522714089.6506.jpg';
 
         $model = new MafabMovie($id, $url, $hungarianTitle, $originalTitle, $year, $thumbnailImage);
-        parent::__construct($json, $model);
+        parent::oneTimeSetup($json, $model);
     }
 }

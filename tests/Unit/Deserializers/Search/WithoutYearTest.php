@@ -8,7 +8,7 @@ use PoLaKoSz\Mafab\Tests\Unit\Deserializers\SearchDeserializerBase;
 
 class WithoutYearTest extends SearchDeserializerBase
 {
-    public function __construct()
+    public static function setUpBeforeClass()
     {
         $json = json_encode([
             0 => [
@@ -29,6 +29,6 @@ class WithoutYearTest extends SearchDeserializerBase
         $thumbnailImage = 'https://mafab.hu/img/icon_kino_default.jpg';
 
         $model = new MafabMovie($id, $url, $hungarianTitle, $originalTitle, $year, $thumbnailImage);
-        parent::__construct($json, $model);
+        parent::oneTimeSetup($json, $model);
     }
 }

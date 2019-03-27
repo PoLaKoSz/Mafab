@@ -8,72 +8,73 @@ use PoLaKoSz\Mafab\Models\MafabMovie;
 
 abstract class SearchDeserializerBase extends TestCase
 {
-    private $results;
-    private $result;
-    private $model;
+    private static $results;
+    private static $result;
+    private static $model;
 
 
 
-    public function __construct(string $json, MafabMovie $model)
+    protected function oneTimeSetup(string $json, MafabMovie $model)
     {
         $class = new SearchDeserializer();
 
-        $this->results = $class->convert($json);
-        $this->result = $this->results[0];
+        self::$results = $class->convert($json);
+        self::$result  = self::$results[0];
 
-        $this->model = $model;
+        self::$model = $model;
     }
+
 
 
     public function testReturnValidObjectType()
     {
-        $this->assertInstanceOf(MafabMovie::class, $this->result);
+        $this->assertInstanceOf(MafabMovie::class, self::$result);
     }
 
     public function testHasEnoughResults()
     {
-        $this->assertEquals(1, count($this->results));
+        $this->assertEquals(1, count(self::$results));
     }
 
     public function testCanExtractMovieId()
     {
-        $this->assertEquals($this->model->getID(), $this->result->getID());
+        $this->assertEquals(self::$model->getID(), self::$result->getID());
     }
 
     public function testCanExtractMovieHungarianTitle()
     {
-        $this->assertEquals($this->model->getHungarianTitle(), $this->result->getHungarianTitle());
+        $this->assertEquals(self::$model->getHungarianTitle(), self::$result->getHungarianTitle());
     }
 
     public function testCanExtractMovieOriginalTitle()
     {
-        $this->assertEquals($this->model->getOriginalTitle(), $this->result->getOriginalTitle());
+        $this->assertEquals(self::$model->getOriginalTitle(), self::$result->getOriginalTitle());
     }
 
     public function testCanExtractMovieUrl()
     {
-        $this->assertEquals($this->model->getURL(), $this->result->getURL());
+        $this->assertEquals(self::$model->getURL(), self::$result->getURL());
     }
 
     public function testCanExtractMovieYear()
     {
-        $this->assertEquals($this->model->getYear(), $this->result->getYear());
+        $this->assertEquals(self::$model->getYear(), self::$result->getYear());
     }
 
     public function testMovieHasYear()
     {
-        if ($this->result->getYear() == -1) {
-            $this->assertEquals(false, $this->result->hasYear());
+        if (self::$result->getYear() == -1) {
+            $this->assertEquals(false, self::$result->hasYear());
         } else {
-            $this->assertEquals(true, $this->result->hasYear());
+            $this->assertEquals(true, self::$result->hasYear());
         }
     }
 
     public function testCanExtractMovieThumbnalImage()
     {
         $this->assertEquals(
-            $this->model->getThumbnailImage(),
-            $this->result->getThumbnailImage()
+            self::$model->getThumbnailImage(),
+            self::$result->getThumbnailImage()
         );
     }
 }

@@ -4,21 +4,18 @@ namespace PoLaKoSz\Mafab\Tests\Regression;
 
 use PHPUnit\Framework\TestCase;
 use PoLaKoSz\Mafab\Models\MafabMovie;
-use PoLaKoSz\Mafab\Search;
+use PoLaKoSz\Mafab\Mafab;
 
 class SearchTest extends TestCase
 {
     private static $results;
 
-
-
     public static function setUpBeforeClass()
     {
-        $page          = new Search();
-        self::$results = $page->search('Last Days in the Desert');
+        $mafab = new Mafab();
+        $search = $mafab->search();
+        self::$results = $search->quicklyFor('Last Days in the Desert');
     }
-
-
 
     public function testReturnValidObjectType()
     {

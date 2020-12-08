@@ -1,6 +1,6 @@
 <?php
 
-namespace PoLaKoSz\Mafab;
+namespace PoLaKoSz\Mafab\Endpoints;
 
 interface SearchEndpointInterface
 {
@@ -9,5 +9,5 @@ interface SearchEndpointInterface
      *
      * @return Array of MafabMovie
      */
-    public function search(string $searchTerm) : array;
+    public function quicklyFor(string $searchTerm) : array;
 }

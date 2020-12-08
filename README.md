@@ -13,18 +13,18 @@ Via Composer
 
 `$ composer require polakosz/mafab`
 
-
 ## Usage
 
-```` php
-use PoLaKoSz\Mafab\Search;
+``` php
+use PoLaKoSz\Mafab\Mafab;
 ...
-$mafab = new Search();
+$mafab = new Mafab();
+$search = $mafab->search(); // @return PoLaKoSz\Mafab\EndPoint\SearchEndpointInterface
 
-$results = $mafab->search( 'Avatar' );
+$results = $search->quicklyFor('Avatar');
 
-echo $results;
-````
+print_r($results);
+```
 
 ## Tests
 

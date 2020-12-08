@@ -6,19 +6,17 @@ use PoLaKoSz\Mafab\DataAccessLayer\WebClient;
 use PoLaKoSz\Mafab\Deserializers\SearchDeserializer;
 use PoLaKoSz\Mafab\EndPoint;
 
-class Search extends Endpoint
+class Search extends Endpoint implements SearchEndpointInterface
 {
     public function __construct()
     {
         parent::__construct(new WebClient(), 'js/autocomplete.php?');
     }
 
-
-
     /**
-     * Search for Movie(s)
+     * Search for Movie(s).
      *
-     * @return  Array   of MafabMovie
+     * @return Array of MafabMovie
      */
     public function search(string $searchTerm) : array
     {

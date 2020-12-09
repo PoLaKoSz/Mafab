@@ -19,7 +19,7 @@ Via Composer
 use PoLaKoSz\Mafab\Mafab;
 ...
 $mafab = new Mafab();
-$search = $mafab->search(); // @return PoLaKoSz\Mafab\EndPoint\SearchEndpointInterface
+$search = $mafab->search(); // @return PoLaKoSz\Mafab\EndPoints\SearchEndpointInterface
 
 $results = $search->quicklyFor('Avatar');
 

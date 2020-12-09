@@ -20,7 +20,7 @@ class Mafab implements MafabInterface
     /**
      * Search for Movie(s).
      *
-     * @return PoLaKoSz\Mafab\EndPoint\SearchEndpointInterface
+     * @return PoLaKoSz\Mafab\EndPoints\SearchEndpointInterface
      */
     public function search() : SearchEndpointInterface
     {

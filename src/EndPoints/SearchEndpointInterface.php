@@ -1,6 +1,6 @@
 <?php
 
-namespace PoLaKoSz\Mafab\Endpoints;
+namespace PoLaKoSz\Mafab\EndPoints;
 
 interface SearchEndpointInterface
 {

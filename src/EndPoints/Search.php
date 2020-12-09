@@ -1,10 +1,10 @@
 <?php
 
-namespace PoLaKoSz\Mafab\Endpoints;
+namespace PoLaKoSz\Mafab\EndPoints;
 
 use PoLaKoSz\Mafab\DataAccessLayer\IWebClient;
 use PoLaKoSz\Mafab\Deserializers\SearchDeserializer;
-use PoLaKoSz\Mafab\EndPoint;
+use PoLaKoSz\Mafab\Endpoint;
 
 class Search extends Endpoint implements SearchEndpointInterface
 {

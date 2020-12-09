@@ -28,7 +28,7 @@ abstract class Endpoint
     {
         $this->webClient = $webClient;
     }
-    
+
     protected function callAPI(string $query) : string
     {
         return $this->webClient->getSourceCode($this->url . $query);
